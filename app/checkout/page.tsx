@@ -1,4 +1,5 @@
 "use client";
+import Script from "next/script";
 
 declare global {
   interface Window {
@@ -14,6 +15,26 @@ export default function CheckoutPage() {
   const [address, setAddress] = useState("");
 
   return (
+  <>
+    <Script
+      src="https://checkout.razorpay.com/v1/checkout.js"
+      strategy="lazyOnload"
+    />
+
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+      
+      <div className="bg-white rounded-3xl shadow-2xl p-10 w-full max-w-xl">
+        
+        <h1 className="text-5xl font-black mb-10 text-green-700">
+          Checkout
+        </h1>
+
+      </div>
+
+    </div>
+  </>
+);
+    
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-10">
 
       <div className="bg-white rounded-3xl shadow-2xl p-10 w-full max-w-xl">
