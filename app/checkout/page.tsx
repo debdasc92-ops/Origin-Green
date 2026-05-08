@@ -66,8 +66,8 @@ export default function CheckoutPage() {
           >
             Pay ₹299
           </button>
-        </div>
-      </div>
-    </>
-  );
+           </div>
+  </div>
+  </>
+);
 }
