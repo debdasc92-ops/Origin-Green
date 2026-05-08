@@ -41,7 +41,7 @@ export default function CheckoutPage() {
   onClick={() => {
 
     const options = {
-      key: "rzp_test_Sn0y91Nh0KddBU",
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
       amount: 29900,
       currency: "INR",
       name: "ORIGIN GREEN",
