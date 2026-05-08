@@ -9,7 +9,8 @@ export default function CheckoutPage() {
 
   const handlePayment = () => {
     const options = {
-      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+        
+      key: "rzp_test_xxxxxxxxx",
       amount: 29900,
       currency: "INR",
       name: "ORIGIN GREEN",
