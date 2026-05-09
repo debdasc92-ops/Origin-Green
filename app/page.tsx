@@ -107,7 +107,7 @@ export default function Home() {
 
       </section>
 
-    <div className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex justify-around items-center py-3 z-50 shadow-lg md:hidden">
+    <div className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex justify-around items-center py-3 z-50 shadow-lg">
 
   <a href="/" className="flex flex-col items-center text-sm font-medium">
     🏠
