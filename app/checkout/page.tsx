@@ -45,7 +45,6 @@ export default function CheckoutPage() {
 
       <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
         <div className="bg-white rounded-3xl shadow-2xl p-10 w-full max-w-xl">
-
           <h1 className="text-5xl font-black mb-10 text-green-700">
             Checkout
           </h1>
@@ -71,7 +70,6 @@ export default function CheckoutPage() {
           >
             Pay ₹299
           </button>
-
         </div>
       </div>
     </>
