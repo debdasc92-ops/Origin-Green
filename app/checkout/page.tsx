@@ -1,6 +1,5 @@
 "use client";
 
-import Script from "next/script";
 import { useState } from "react";
 
 export default function CheckoutPage() {
@@ -13,65 +12,86 @@ export default function CheckoutPage() {
       amount: 29900,
       currency: "INR",
       name: "ORIGIN GREEN",
-      description: "Moringa Powder Order",
-
+      description: "Premium Moringa Powder",
+      image: "/logo.png",
       handler: function () {
-        alert("Payment Successful 🎉");
+        alert("Payment Successful");
       },
-
       prefill: {
-        name: name,
+        name,
       },
-
-      notes: {
-        address: address,
-      },
-
       theme: {
-        color: "#15803d",
+        color: "#0b7a33",
       },
     };
 
-    const rzp = new (window as any).Razorpay(options);
+    // @ts-ignore
+    const rzp = new window.Razorpay(options);
     rzp.open();
   };
 
   return (
-    <>
-      <Script
-        src="https://checkout.razorpay.com/v1/checkout.js"
-        strategy="lazyOnload"
-      />
+    <div className="min-h-screen bg-gradient-to-br from-green-950 via-green-800 to-lime-500 flex items-center justify-center px-4 py-10">
+      <div className="bg-white w-full max-w-5xl rounded-[40px] overflow-hidden shadow-2xl grid md:grid-cols-2">
+        
+        {/* LEFT SIDE */}
+        <div className="bg-gradient-to-br from-green-900 to-green-700 text-white p-10 flex flex-col justify-between">
+          <div>
+            <h1 className="text-5xl font-extrabold leading-tight">
+              Premium <br /> Moringa Powder
+            </h1>
 
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
-        <div className="bg-white rounded-3xl shadow-2xl p-10 w-full max-w-xl">
-          <h1 className="text-5xl font-black mb-10 text-green-700">
+            <p className="mt-6 text-green-100 text-lg leading-relaxed">
+              Freshly packed moringa powder crafted for daily wellness,
+              immunity and energy.
+            </p>
+          </div>
+
+          <div className="mt-10 bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/20">
+            <p className="text-sm text-green-100">Total Amount</p>
+
+            <h2 className="text-5xl font-bold mt-2">₹299</h2>
+
+            <p className="mt-3 text-green-200 text-sm">
+              Secure payment powered by Razorpay
+            </p>
+          </div>
+        </div>
+
+        {/* RIGHT SIDE */}
+        <div className="bg-white p-10 flex flex-col justify-center">
+          <h2 className="text-4xl font-extrabold text-green-800 mb-8">
             Checkout
-          </h1>
+          </h2>
 
           <input
             type="text"
             placeholder="Your Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full border p-4 rounded-2xl mb-6"
+            className="w-full mb-5 px-5 py-4 rounded-2xl border-2 border-green-700 bg-white text-green-900 placeholder:text-green-500 outline-none focus:ring-4 focus:ring-green-300"
           />
 
           <textarea
-            placeholder="Your Address"
+            placeholder="Delivery Address"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
-            className="w-full border p-4 rounded-2xl mb-6"
+            rows={5}
+            className="w-full mb-6 px-5 py-4 rounded-2xl border-2 border-green-700 bg-white text-green-900 placeholder:text-green-500 outline-none focus:ring-4 focus:ring-green-300 resize-none"
           />
 
           <button
             onClick={handlePayment}
-            className="w-full bg-green-700 text-white py-5 rounded-2xl text-2xl font-bold"
+            className="w-full bg-green-700 hover:bg-green-800 text-white text-2xl font-bold py-5 rounded-2xl transition-all duration-300 shadow-lg hover:scale-[1.02]"
           >
             Pay ₹299
           </button>
+
+          <p className="text-center text-green-700 mt-5 text-sm">
+            100% Secure Payment Gateway
+          </p>
         </div>
       </div>
-    </>
+    </div>
   );
 }
