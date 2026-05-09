@@ -107,6 +107,25 @@ export default function Home() {
 
       </section>
 
-    </div>
+    <div className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex justify-around items-center py-3 z-50 shadow-lg md:hidden">
+
+  <a href="/" className="flex flex-col items-center text-sm font-medium">
+    🏠
+    <span>Home</span>
+  </a>
+
+  <a href="/cart" className="flex flex-col items-center text-sm font-medium">
+    🛒
+    <span>Cart</span>
+  </a>
+
+  <a
+    href="/checkout"
+    className="bg-green-700 text-white px-5 py-2 rounded-full font-semibold shadow-md"
+  >
+    Buy Now
+  </a>
+</div>
+</div>
   );
 }
